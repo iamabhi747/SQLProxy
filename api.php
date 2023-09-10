@@ -16,6 +16,12 @@ if (!isset($data->query))
     exit();
 }
 
+if (!isset($data->token))
+{
+    echo '{"error":"Auth token Required"}';
+    exit();
+}
+
 
 // Collect Parameters
 $parameters = [];
@@ -31,8 +37,8 @@ while (isset($data->$parm_name))
 
 
 // Connect
-include 'database.php';
-$db = new Database('localhost', 'hw','root', '');
+include 'auth.php';
+$db = auth_database($data->token);
 
 if (!$db->connected)
 {
