@@ -7,7 +7,7 @@ function auth_database($token)
     if (!$server_db->connected)
     {
         echo '{"error":"Something Went Wrong on Server"}';
-        http_response_code(500);
+        // http_response_code(500);
         exit();
     }
 
