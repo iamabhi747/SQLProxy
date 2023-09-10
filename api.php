@@ -53,6 +53,6 @@ try {
 }
 
 // Send Results
-echo '{"result":'. $result . '}'
+echo '{"result":'. json_encode($result) . '}'
 
 ?>

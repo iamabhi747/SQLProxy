@@ -47,7 +47,7 @@ class Database
             $rows[] = $row;
         }
 
-        return json_encode($rows);
+        return $rows;
     }
 }
 
